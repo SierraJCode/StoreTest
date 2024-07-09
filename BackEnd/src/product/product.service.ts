@@ -22,11 +22,16 @@ export class ProductService {
         return newProduct.save()
     }
 
-    async update(id: string, createProductDTO:CreateProductDTO){
+    async update(id: string, createProductDTO:CreateProductDTO): Promise<Product>{
         if(this.productModel.findById(id).exists){
-            return this.productModel.findByIdAndUpdate(id, createProductDTO).exec();
+            return this.productModel.findByIdAndUpdate(id, createProductDTO, { new: true }).exec();
         }else{
-            return console.log('Producto no encontrado');
+            console.log('Producto no encontrado');
         }
     }
+
+    async delete(id: string):Promise<Product>{
+        return this.productModel.findByIdAndDelete(id).exec();
+    }
 }
+
