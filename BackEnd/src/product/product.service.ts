@@ -21,4 +21,12 @@ export class ProductService {
         const newProduct = new this.productModel(createProductDTO);
         return newProduct.save()
     }
+
+    async update(id: string, createProductDTO:CreateProductDTO){
+        if(this.productModel.findById(id).exists){
+            return this.productModel.findByIdAndUpdate(id, createProductDTO).exec();
+        }else{
+            return console.log('Producto no encontrado');
+        }
+    }
 }
