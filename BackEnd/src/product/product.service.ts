@@ -31,31 +31,3 @@ export class ProductService {
     
     
 }
-
-
-// constructor(@InjectModel('Product') private readonly productModel: Model<Product>){}
-
-// async findAll(): Promise<Product[]>{
-//     return this.productModel.find().exec();
-// }
-// async findOne(id: string): Promise<Product>{
-//     return this.productModel.findById(id).exec();
-// }
-
-// async create(createProductDTO: CreateProductDTO): Promise<Product>{
-//     const newProduct = new this.productModel(createProductDTO);
-//     return newProduct.save()
-// }
-
-// async update(id: string, createProductDTO:CreateProductDTO): Promise<Product>{
-//     if(this.productModel.findById(id).exists){
-//         return this.productModel.findByIdAndUpdate(id, createProductDTO, { new: true }).exec();
-//     }else{
-//         console.log('Producto no encontrado');
-//     }
-// }
-
-// async delete(id: string):Promise<Product>{
-//     return this.productModel.findByIdAndDelete(id).exec();
-// }
-
