@@ -4,5 +4,6 @@ export interface Product extends Document {
     name: string;
     description: string;
     price: number;
+    img: string,
     createAt?: Date;
 }
