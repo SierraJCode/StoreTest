@@ -14,8 +14,5 @@ export class AppComponent {
   constructor(private productService: ProductService){}
 
   ngOnInit(): void {
-    this.productService.getAllData().subscribe(data => {
-      console.log(data);
-    })
   }
 }
