@@ -1,4 +1,4 @@
-import { IsDate, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class CreateProductDTO {
 
@@ -18,7 +18,5 @@ export class CreateProductDTO {
     @IsNotEmpty()
     readonly img: string
 
-    @IsDate()
-    @IsNotEmpty()
     readonly createAt: Date;
 }
