@@ -23,7 +23,7 @@ export class ProductController {
     }
 
     @Put(':id')
-    async update(@Param('id') id: string, createProductDTO: CreateProductDTO){
+    async update(@Param('id') id: string, @Body() createProductDTO: CreateProductDTO){
         return this.productService.update(id, createProductDTO);
     }
 
