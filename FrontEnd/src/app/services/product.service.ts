@@ -1,6 +1,7 @@
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../interface/product.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(){
-    return this.http.get(`${this.apiUrl}/product`)
+  getProducts():Observable<Product[]>{
+    return this.http.get<Product[]>(`${this.apiUrl}/product`)
   }
 
   getProduct(id: string){
