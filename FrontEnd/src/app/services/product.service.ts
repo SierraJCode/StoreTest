@@ -10,6 +10,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  
+  getAllData(){
+    return this.http.get(`${this.apiUrl}/product`)
+  }
 
 }

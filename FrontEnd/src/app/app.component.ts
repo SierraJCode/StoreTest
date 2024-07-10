@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'FrontEnd';
+  
+  constructor(private productService: ProductService){}
+
+  ngOnInit(): void {
+    this.productService.getAllData().subscribe(data => {
+      console.log(data);
+    })
+  }
 }
