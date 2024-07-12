@@ -5,5 +5,5 @@ export const ProductSchema = new Schema({
     description: {type: String, require: true},
     price: {type: Number, require: true},
     img: {type: String, require: true},
-    createAt: {type: Date, default: Date.now}
+    createAt: {type: Date, require: true}
 })
