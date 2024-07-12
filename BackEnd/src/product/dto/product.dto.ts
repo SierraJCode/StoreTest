@@ -18,5 +18,7 @@ export class CreateProductDTO {
     @IsNotEmpty()
     readonly img: string
 
-    readonly createAt: Date;
+    @IsString()
+    @IsNotEmpty()
+    readonly createAt: string;
 }
