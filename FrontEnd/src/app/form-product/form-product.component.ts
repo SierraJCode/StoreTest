@@ -16,7 +16,6 @@ export class FormProductComponent {
   constructor(private productService: ProductService, private router: Router){}
 
   product: Product = {
-    _id: '',
     name: '',
     description: '',
     price: 0,
@@ -27,7 +26,6 @@ export class FormProductComponent {
     return this.productService.createProduct(this.product).subscribe(
       res => {
         console.log(res)
-        this.router.navigate(['/'])
       },
       err => console.log(err)
     )

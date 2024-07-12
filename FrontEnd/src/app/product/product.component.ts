@@ -27,4 +27,17 @@ export class ProductComponent {
         this.products = datos;
     })
   }
+
+  deleteProduct(id:any){
+    if(id){
+      this.productService.deleteProduct(id).subscribe(
+      res => {
+        alert(id)
+        this.getProducts()
+      },
+      err => console.log(err)
+      )
+    }
+  }
 }
+
