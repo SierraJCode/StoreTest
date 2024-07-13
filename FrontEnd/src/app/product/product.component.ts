@@ -32,7 +32,6 @@ export class ProductComponent {
     if(id){
       this.productService.deleteProduct(id).subscribe(
       res => {
-        alert(id)
         this.getProducts()
       },
       err => console.log(err)
